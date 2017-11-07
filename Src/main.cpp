@@ -34,7 +34,8 @@ int main(int argc, char* argv[])
 void RunObjectness(CStr &resName, double base, int W, int NSS, int numPerSz)
 {
     srand((unsigned int)time(NULL));
-    DataSetVOC voc2007("/home/bittnt/BING/BING_beta1/VOC/VOC2007/");
+    //DataSetVOC voc2007("/home/bittnt/BING/BING_beta1/VOC/VOC2007/");
+    DataSetVOC voc2007("/home/Object-Proposal/src/Bing/VOC2007/");
     voc2007.loadAnnotations();
     //voc2007.loadDataGenericOverCls();
 
@@ -47,6 +48,14 @@ void RunObjectness(CStr &resName, double base, int W, int NSS, int numPerSz)
     //objNess.getObjBndBoxesForTests(boxesTests, 250);
     objNess.getObjBndBoxesForTestsFast(boxesTests, numPerSz);
     //objNess.getRandomBoxes(boxesTests);
+    
+    // [shawn]
+    for(int i=0; i<boxesTests.size(); i++)  {
+        vector<Vec4i> boxes_per_pic = boxesTests[i];
+        for( int j=0; j<boxes_per_pic.size(); j++ )
+            printf("%d: %d %d %d %d\n", j, boxes_per_pic[j][0], boxes_per_pic[j][1], boxes_per_pic[j][2], boxes_per_pic[j][3]);
+    }
+    
 
     //objNess.evaluatePerClassRecall(boxesTests, resName, 1000);
     //objNess.illuTestReults(boxesTests);

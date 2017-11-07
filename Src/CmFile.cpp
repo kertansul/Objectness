@@ -155,8 +155,19 @@ vecS CmFile::loadStrList(CStr &fName)
     vecS strs;
     while(getline(fIn, line) && line.size()){
         unsigned sz = line.size();
-        line.resize(sz - 1); //Please use script to convert the VOC format data into the OpenCV format data
+        //line.resize(sz - 1); //Please use script to convert the VOC format data into the OpenCV format data
         //line.resize(sz);
+        char last_ch = line[line.size() - 1];
+        if (last_ch >= '0' && last_ch <= '9') {
+        }
+        else if (last_ch >= 'a' && last_ch <= 'z') {
+        }
+        else if (last_ch >= 'A' && last_ch <= 'Z') {
+        }
+        else {
+            sz = sz - 1;
+        }
+        line.resize(sz);
         strs.push_back(line);
     }
     return strs;
