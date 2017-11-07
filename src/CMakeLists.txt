@@ -27,4 +27,4 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Wall")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall")
-target_link_libraries(${PROJECT_NAME} opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs ${EXTERNAL_LIBS} BING LibLinear)
+target_link_libraries(${PROJECT_NAME} opencv_core opencv_imgproc opencv_highgui ${EXTERNAL_LIBS} BING LibLinear)
