@@ -26,3 +26,6 @@ src/CMakeCache.txt
 src/CMakeFiles/*
 src/Makefile
 src/cmake_install.cmake
+
+# output files
+VOC2007/Results/*
