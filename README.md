@@ -21,7 +21,7 @@ ln -s /tmp/VOC2007/JPEGImages JPEGImages
 To use pre-processed annotation files, download OpenCV readable version of [VOC2007 annotations](http://mmcheng.net/mftp/Data/VOC2007_AnnotationsOpenCV_Readable.7z). Place them in `/tmp/VOC2007/Annotations`
 
 ## DEMO
-* Put the images you want to test in `/VOC2007/Main/test.txt`
+* Put the images you want to test in `/VOC2007/ImageSets/Main/test.txt`
 * To make this program running fast, you need to enable release mode:
 ```
 cd Objectness/src/
